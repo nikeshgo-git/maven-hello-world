@@ -18,7 +18,25 @@
     <sonar.jacoco.itReportPath>target/jacoco-it.exec</sonar.jacoco.itReportPath>
     <sonar.coverage.jacoco.xmlReportPaths>../app-it/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
-
+<sonar.coverage.exclusions>jacoco-report/**</sonar.coverage.exclusions>
+<aggregate.report.dir>../jacoco-report/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
+<sonar.coverage.jacoco.xmlReportPaths>${basedir}/${aggregate.report.dir} 
+</sonar.coverage.jacoco.xmlReportPaths>    
+<modules>
+<module>jacoco-report</module>
+<plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.5</version>
+        <executions>
+            <execution>
+                <id>prepare-agent</id>
+                <goals>
+                    <goal>prepare-agent</goal>
+                </goals>
+            </execution>
+        </executions>
+  </plugin>
   <modules>
     <module>server</module>
     <module>webapp</module>
