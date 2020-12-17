@@ -14,6 +14,8 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+    <sonar.jacoco.reportPath>target/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.jacoco.itReportPath>target/jacoco-it.exec</sonar.jacoco.itReportPath>
   </properties>
 
   <modules>
